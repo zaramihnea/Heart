@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="I love you ana">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>I love you</title>
   </head>
@@ -15,7 +17,56 @@
             
         </div>
     </div>
-    <p>I love you</p>
-  
+    <h1>I love you</h1>
+    <p>Hello babe! I love you very much and i would like to let you know that i care so much about you and i would like you to be mine forever! I love you to the moon and back and i wish you all the happiness in the world right now. I also miss you and i cannot wait to see you. Hope that's soon :) You are very beautiful and smart and i would do anything for you beacuse i love you from the bottom of my heart.</p>
+    <p>I love you and take care! I wish you a wonderful rest of the day!</p>
+    <div class="popup-box" id="hid" style="display: block; visibility: hidden">
+        <div class="transparent-layer"></div>
+        <div class="popup-inner" >
+
+            <div class="popup-msg">You recieved some love! Open it now?</div>
+            <button id="close" type="button" class="close">&times;</button>
+            
+        <button class="next-step-btn" id="btnParty" type="button">Open love...</button>
+    </div>
+    </div>
+    <button id="nextUp" style="visibility: hidden; display: block;" type="button">Open love again...</button>
+    <div id="tsparticles"></div>
   </body>
+
+  <script>
+      function showIt() {
+  document.getElementById("hid").style.visibility = "visible";
+}
+setTimeout("showIt()", 3000); // after 3 seconds
+
+document.getElementById("close").addEventListener("click", function closeIt() {
+    document.getElementById("hid").style.visibility = "hidden";
+    document.getElementById("nextUp").style.visibility = "visible";
+});
+document.getElementById("nextUp").addEventListener("click", function openAgain() {
+    document.getElementById("hid").style.visibility = "visible";
+});
+  </script>
+
+  <script>
+      btnParty.addEventListener("click", () => {
+  confetti("tsparticles", {
+    angle: 90,
+    count: 500,
+    position: { x: 50, y: 50 },
+    spread: 90,
+    startVelocity: 60,
+    decay: 0.8,
+    gravity: 1,
+    drift: 0,
+    ticks: 450,
+    colors: ["#fff", "#f00"],
+    shapes: ["square", "circle"],
+    scalar: 1,
+    zIndex: 2000,
+    disableForReducedMotion: true
+  });
+});
+  </script>
 </html>
